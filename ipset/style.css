@@ -1,0 +1,588 @@
+/* ========== ОСНОВНЫЕ СТИЛИ - ТОЛЬКО ТЁМНАЯ ТЕМА ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #0f0b1f; /* Тёмно-фиолетовый фон */
+    color: #e0d6ff; /* Светло-фиолетовый текст */
+    line-height: 1.6;
+}
+
+/* Шапка */
+header {
+    background-color: #1a1530; /* Фиолетовая шапка */
+    box-shadow: 0 2px 20px rgba(106, 13, 173, 0.3);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #9d4edd; /* Фиолетовый */
+    text-decoration: none;
+}
+
+.nav-links a {
+    margin-left: 2rem;
+    text-decoration: none;
+    color: #c9b8ff;
+    transition: all 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    color: white;
+    background-color: #7b2cbf; /* Фиолетовый при наведении */
+    transform: translateY(-2px);
+}
+
+/* Главный блок */
+.hero {
+    max-width: 1200px;
+    margin: 6rem auto 2rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero-content h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: #c9b8ff;
+    margin-bottom: 2rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4);
+    border: 2px solid #7b2cbf;
+}
+
+/* Секции */
+.section {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+}
+
+.section h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #9d4edd;
+    position: relative;
+}
+
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, #9d4edd, #7b2cbf);
+    border-radius: 2px;
+}
+
+/* Навыки */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background: #1a1530;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(106, 13, 173, 0.2);
+    transition: all 0.3s;
+    border: 1px solid #2d1b69;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(157, 78, 221, 0.3);
+    border-color: #9d4edd;
+}
+
+.skill-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.skill-card h3 {
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.skill-card p {
+    color: #b8a6ff;
+}
+
+/* Контакты - ТОЛЬКО TELEGRAM */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.contact-links a {
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(123, 44, 191, 0.4);
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.contact-links a:hover::before {
+    left: 100%;
+}
+
+.contact-links a:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.6);
+    background: linear-gradient(135deg, #9d4edd, #c77dff);
+}
+    .contact-links a i {
+    font-size: 1.5rem;
+}
+
+/* Подвал */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #0a0818;
+    color: #8a75d1;
+    margin-top: 4rem;
+    border-top: 1px solid #2d1b69;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+/* ========== КНОПКИ ВНИЗУ ========== */
+/* Кнопка темы (оставляем, но теперь это просто кнопка) */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(157, 78, 221, 0.4);
+    transition: all 0.3s;
+    border: none;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 25px rgba(157, 78, 221, 0.6);
+    background: linear-gradient(135deg, #c77dff, #9d4edd);
+}
+
+.theme-toggle i {
+    color: white;
+    font-size: 1.5rem;
+}
+
+/* Кнопка музыки */
+.music-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 80px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #ff6b9d, #ff8e53);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+    transition: all 0.3s;
+}
+
+.music-btn:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+}
+
+/* Панель музыки */
+.music-panel {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: #1a1530;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(106, 13, 173, 0.4);
+    z-index: 999;
+    transform: translateX(400px);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    border: 1px solid #2d1b69;
+}
+
+.music-panel.active {
+    transform: translateX(0);
+}
+
+.music-header {
+    padding: 1rem;
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.music-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    transition: transform 0.3s;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
+}
+
+.music-player {
+    padding: 1rem;
+}
+
+audio {
+    width: 100%;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.track {
+    padding: 0.7rem;
+    background: #241b3a;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s;
+    color: #d0c4ff;
+    border: 1px solid transparent;
+}
+
+.track:hover {
+    background: #2d2250;
+    transform: translateX(5px);
+    border-color: #7b2cbf;
+}
+
+.track.active {
+    background: linear-gradient(135deg, #7b2cbf, #9d4edd);
+    color: white;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
+}
+
+/* Стили для audio-плеера */
+audio::-webkit-media-controls-panel {
+    background-color: #241b3a;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    filter: invert(1);
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 4rem;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .music-panel {
+        width: 90%;
+        right: 5%;
+    }
+    
+    .music-btn {
+        right: 20px;
+        bottom: 80px;
+    }
+    
+    .theme-toggle {
+        bottom: 20px;
+        right: 20px;
+    }
+}/* ========== ФОН С НАДПИСЯМИ БАНД ========== */
+.gang-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0818 0%, #1a0a2e 100%);
+}
+
+/* Основные надписи банд */
+.gang-text {
+    position: absolute;
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    font-weight: 900;
+    font-size: 120px;
+    opacity: 0.08;
+    user-select: none;
+    white-space: nowrap;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    filter: blur(0.5px);
+}
+
+/* D.O.A надписи */
+.gang-doa {
+    color: #9d4edd;
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.3);
+}
+
+/* Другие банды */
+.gang-other {
+    font-size: 100px;
+    opacity: 0.06;
+}
+
+/* Теги (мелкие надписи) */
+.gang-tag {
+    position: absolute;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.05);
+    opacity: 0.1;
+    user-select: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    transform: rotate(-45deg);
+}
+
+/* Позиционирование надписей */
+.gang-text:nth-child(1) { top: 10%; left: 5%; }
+.gang-text:nth-child(2) { top: 30%; left: 70%; transform: rotate(15deg); }
+.gang-text:nth-child(3) { top: 60%; left: 20%; transform: rotate(-10deg); }
+.gang-text:nth-child(4) { top: 15%; left: 60%; color: #ff0000; }
+.gang-text:nth-child(5) { top: 50%; left: 80%; color: #00ff00; transform: rotate(20deg); }
+.gang-text:nth-child(6) { top: 70%; left: 10%; color: #ffff00; }
+.gang-text:nth-child(7) { top: 40%; left: 40%; color: #ff00ff; transform: rotate(-15deg); }
+
+/* Позиционирование тегов */
+.gang-tag:nth-child(8) { top: 20%; left: 85%; }
+.gang-tag:nth-child(9) { top: 80%; left: 15%; }
+.gang-tag:nth-child(10) { top: 45%; left: 5%; }
+.gang-tag:nth-child(11) { top: 65%; left: 90%; }
+.gang-tag:nth-child(12) { top: 10%; left: 25%; }
+.gang-tag:nth-child(13) { top: 85%; left: 75%; }
+/* ========== ВИДЕО С РАМКОЙ ========== */
+.video-container {
+    width: 100%;
+    max-width: 680px; /* УВЕЛИЧИВАЕМ РАМКУ */
+    height: 580px;    /* УВЕЛИЧИВАЕМ ВЫСОТУ РАМКИ */
+    margin: 30px auto;
+    background: #1a1530;
+    border-radius: 20px;
+    border: 4px solid #9d4edd;
+    box-shadow: 0 15px 40px rgba(157, 78, 221, 0.5);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Важно! Обрезает всё, что выходит за рамки */
+}
+
+/* Само видео внутри рамки */
+.video-container video {
+    width: 100%;
+    height: 500px; /* Высота видео МЕНЬШЕ чем высота рамки */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+/* Подпись */
+.video-description {
+    color: #c77dff;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 280px;
+        padding: 10px;
+    }
+    
+    .video-container video {
+        height: 400px;
+    }
+}
+/* ========== КОМПАКТНАЯ МУЗЫКА ВВЕРХУ ========== */
+.compact-music {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: rgba(26, 21, 48, 0.95);
+    padding: 10px 15px;
+    border-radius: 50px;
+    border: 2px solid #9d4edd;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 999;
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.4);
+    backdrop-filter: blur(10px);
+}
+
+.compact-music audio {
+    width: 160px;
+    height: 30px;
+}
+
+.music-label {
+    color: #c77dff;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+/* Зацикленное видео без кнопок */
+.video-loop {
+    width: 100%;
+    max-width: 320px;
+    height: 570px;
+    margin: 30px auto;
+    position: relative;
+    border-radius: 20px;
+    border: 4px solid #9d4edd;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 15px 40px rgba(157, 78, 221, 0.5);
+}
+
+/* Наложение с текстом */
+.video-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-overlay h3 {
+    color: #c77dff;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.video-overlay p {
+    margin: 5px 0 0;
+    color: #b8a6ff;
+    font-size: 0.9rem;
+}
