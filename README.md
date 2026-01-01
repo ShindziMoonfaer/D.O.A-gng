@@ -59,9 +59,9 @@
     
     <!-- Зацикленное видео без кнопок -->
     <div class="video-loop">
-        <video autoplay muted loop playsinline
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto"
                style="width:100%; height:100%; object-fit:cover;">
-            <source src="KENZOBALLAARCH.mp4" type="video/mp4">
+            <source src="kenzo.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         <div class="video-overlay">
@@ -111,7 +111,7 @@
             
             <div class="bio-item">
                 <h4><i class="fas fa-trophy"></i> D.O.A member</h4>
-                <p>Top Shoter</p>
+                <p>Top Shooter</p>
             </div>
         </div>
     </div>
