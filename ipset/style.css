@@ -650,15 +650,17 @@ audio::-webkit-media-controls-mute-button {
 /* Зацикленное видео без кнопок */
 .video-loop {
     width: 100%;
-    max-width: 600px;
-    height: 570px;
+    max-width: 900px;  /* Увеличено с 600px */
+    height: 750px;      /* Увеличено с 570px */
     margin: 30px auto;
     position: relative;
     border-radius: 20px;
-    border: 4px solid #9d4edd;
+    border: 5px solid #9d4edd;  /* Увеличена толщина рамки */
     overflow: hidden;
     background: #000;
-    box-shadow: 0 15px 40px rgba(157, 78, 221, 0.5);
+    box-shadow: 0 20px 60px rgba(157, 78, 221, 0.7),  /* Усиленное свечение */
+                0 0 40px rgba(157, 78, 221, 0.5),
+                inset 0 0 20px rgba(157, 78, 221, 0.2);
     padding: 0;
     display: flex;
     align-items: center;
@@ -694,4 +696,297 @@ audio::-webkit-media-controls-mute-button {
     margin: 5px 0 0;
     color: #b8a6ff;
     font-size: 0.9rem;
+}
+
+/* ========== РАСШИРЕННАЯ БИОГРАФИЯ ========== */
+.extended-bio {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, #0f0b1f, #1a1530);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(157, 78, 221, 0.3);
+}
+
+.bio-wrapper h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    color: #9d4edd;
+    margin-bottom: 3rem;
+    text-shadow: 0 0 20px rgba(157, 78, 221, 0.5);
+}
+
+/* Временная шкала */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+    margin-bottom: 4rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #9d4edd, #7b2cbf);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    width: 40%;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9d4edd;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.timeline-content {
+    width: 40%;
+    background: #1a1530;
+    padding: 1.5rem;
+    border-radius: 15px;
+    border: 2px solid #7b2cbf;
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.3);
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(157, 78, 221, 0.5);
+    border-color: #9d4edd;
+}
+
+.timeline-content h3 {
+    color: #c77dff;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+}
+
+.timeline-content p {
+    color: #d0c4ff;
+    line-height: 1.6;
+}
+
+/* Точки на временной шкале */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: #9d4edd;
+    border: 4px solid #0f0b1f;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(157, 78, 221, 0.6);
+    z-index: 1;
+}
+
+/* Интересные факты */
+.fun-facts {
+    margin-bottom: 4rem;
+}
+
+.fun-facts h3 {
+    text-align: center;
+    color: #9d4edd;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.fact-card {
+    background: #1a1530;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #2d1b69;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.fact-card:hover {
+    transform: translateY(-10px);
+    border-color: #9d4edd;
+    box-shadow: 0 15px 35px rgba(157, 78, 221, 0.4);
+}
+
+.fact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.fact-card h4 {
+    color: #c77dff;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fact-card p {
+    color: #b8a6ff;
+    line-height: 1.6;
+}
+
+/* Музыкальный стиль */
+.music-style {
+    margin-bottom: 4rem;
+    background: #1a1530;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #7b2cbf;
+}
+
+.music-style h3 {
+    color: #9d4edd;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.style-content {
+    color: #d0c4ff;
+}
+
+.style-text p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+.style-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.style-list li {
+    padding: 0.8rem 0;
+    color: #c9b8ff;
+    font-size: 1.05rem;
+    border-bottom: 1px solid rgba(157, 78, 221, 0.2);
+}
+
+.style-list li i {
+    color: #9d4edd;
+    margin-right: 10px;
+}
+
+/* Коллаборации */
+.collaborations {
+    background: #1a1530;
+    padding: 2rem;
+    border-radius: 20px;
+    border: 2px solid #7b2cbf;
+}
+
+.collaborations h3 {
+    color: #9d4edd;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.collab-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.collab-item {
+    background: rgba(157, 78, 221, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid #9d4edd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.collab-item:hover {
+    background: rgba(157, 78, 221, 0.2);
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.3);
+}
+
+.collab-artist {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #c77dff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.collab-desc {
+    color: #b8a6ff;
+    font-size: 1rem;
+}
+
+/* Адаптивность для расширенной биографии */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-item {
+        flex-direction: column !important;
+        align-items: flex-start;
+        padding-left: 60px;
+    }
+    
+    .timeline-item::after {
+        left: 30px;
+    }
+    
+    .timeline-date {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+    }
+    
+    .timeline-content {
+        width: 100%;
+    }
+    
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .collab-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .bio-wrapper h2 {
+        font-size: 2rem;
+    }
 }
