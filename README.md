@@ -11,6 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- МОДАЛЬНОЕ ОКНО КАПЧИ -->
+    <div id="captchaModal" class="captcha-modal">
+        <div class="captcha-container">
+            <h2>Проверка</h2>
+            <p id="captchaQuestion" style="font-size: 1.1rem; margin: 20px 0; color: #ffffff;">2 + 3 = ?</p>
+            <input type="number" id="captchaAnswer" placeholder="Введите ответ" class="captcha-input" autocomplete="off">
+            <button id="submitCaptcha" class="captcha-btn">Проверить</button>
+            <p class="captcha-note">Решите простой пример - музыка включится автоматически</p>
+        </div>
+    </div>
+
     <header>
         <nav>
             <a href="#" class="logo">D.O.A</a>
@@ -50,7 +61,7 @@
     <div class="video-loop">
         <video autoplay muted loop playsinline
                style="width:100%; height:100%; object-fit:cover;">
-            <source src="kenzo.mp4" type="video/mp4">
+            <source src="KENZOBALLAARCH.mp4" type="video/mp4">
             Ваш браузер не поддерживает видео.
         </video>
         <div class="video-overlay">
@@ -74,7 +85,7 @@
         <!-- Текст биографии -->
         <div class="bio-text">
             <div class="bio-item">
-                <h4><i class="fas fa-user"></i> Trayvon Jackson</h4>
+                <h4><i class="fas fa-user"></i> Kenzo Balla</h4>
                 <p>Trayvon Jackson</p>
             </div>
             
@@ -125,16 +136,17 @@
         </section>
     </main>
     <!-- Компактный аудиоплеер -->
-    <div class="compact-music">
-        <audio controls>
+    <div class="compact-music" style="display: none;">
+        <audio id="myAudio" controls>
             <source src="myrap.mp3" type="audio/mpeg">
             Ваш браузер не поддерживает аудио.
         </audio>
         <span class="music-label">Трек D.O.A</span>
     </div>
-    <footer>
+    <footer style="display: none;">
         <p>Создан по совету AI | 2025</p>
     </footer>
 </div>
+<script src="script.js"></script>
 </body>
 </html>
