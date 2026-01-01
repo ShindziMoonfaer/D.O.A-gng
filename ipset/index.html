@@ -28,6 +28,7 @@
             <div class="nav-links">
                 <a href="#about">Trayvon Jackson</a>
                 <a href="#skills">Everyone K</a>
+                <a href="#bio-extended">Путь к успеху</a>
                 <a href="#contact">Blue Mateo ADV</a>
             </div>
         </nav>
@@ -128,7 +129,7 @@
 </div>
 
 <!-- РАСШИРЕННАЯ БИОГРАФИЯ -->
-<section class="extended-bio">
+<section id="bio-extended" class="extended-bio">
     <div class="bio-wrapper">
         <h2>Путь к успеху</h2>
         
