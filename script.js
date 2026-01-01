@@ -277,3 +277,32 @@ console.log(`
         }
     });
 })();
+
+// Автоплей: попытки воспроизведения и восстановление при окончании
+(function() {
+    const bg = document.getElementById('bgVideo');
+    if (!bg) return;
+
+    function tryPlay() {
+        bg.play().then(() => {
+            console.log('▶️ Фоновое видео играет');
+        }).catch(err => {
+            console.warn('⚠️ Автовоспроизведение заблокировано:', err);
+        });
+    }
+
+    // Если браузер блокирует autoplay со звуком, видео у нас muted, так что должно работать
+    tryPlay();
+
+    // Гарантируем непрерывный цикл на случае, если loop не срабатывает
+    bg.addEventListener('ended', () => {
+        bg.currentTime = 0;
+        tryPlay();
+    });
+
+    // При первом взаимодействии пользователя — повторная попытка воспроизведения
+    document.addEventListener('click', function once() {
+        tryPlay();
+        document.removeEventListener('click', once);
+    });
+})();
