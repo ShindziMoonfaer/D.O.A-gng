@@ -1251,3 +1251,150 @@ audio::-webkit-media-controls-timeline {
         top: 10px;
     }
 }
+
+/* ========== КАРТОЧКИ МУЗЫКАЛЬНОГО СТИЛЯ ========== */
+.music-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.music-card {
+    background: linear-gradient(135deg, #1a1530, #2d1b4e);
+    padding: 25px;
+    border-radius: 15px;
+    border: 2px solid #7b2cbf;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.music-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(157, 78, 221, 0.1) 0%, transparent 70%);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+}
+
+.music-card:hover::before {
+    transform: scale(1);
+}
+
+.music-card:hover {
+    transform: translateY(-10px);
+    border-color: #9d4edd;
+    box-shadow: 0 15px 40px rgba(157, 78, 221, 0.5);
+}
+
+.music-card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 0 10px rgba(157, 78, 221, 0.5));
+}
+
+.music-card h4 {
+    color: #c77dff;
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.music-card p {
+    color: #b8a6ff;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Дополнительные элементы в модальных окнах */
+.production-elements,
+.flow-types,
+.lyrics-themes,
+.influences-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.element-card,
+.flow-card,
+.theme-card,
+.influence-card {
+    background: rgba(157, 78, 221, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid #9d4edd;
+    transition: all 0.3s ease;
+}
+
+.element-card:hover,
+.flow-card:hover,
+.theme-card:hover,
+.influence-card:hover {
+    background: rgba(157, 78, 221, 0.2);
+    transform: translateX(5px);
+    box-shadow: 0 5px 20px rgba(157, 78, 221, 0.3);
+}
+
+.element-card h4,
+.flow-card h4,
+.theme-card h4,
+.influence-card h4 {
+    color: #c77dff;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.element-card p,
+.flow-card p,
+.theme-card p,
+.influence-card p {
+    color: #d0c4ff;
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.element-card ul,
+.flow-card ul,
+.theme-card ul,
+.influence-card ul {
+    color: #b8a6ff;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.element-card ul li,
+.flow-card ul li,
+.theme-card ul li,
+.influence-card ul li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Адаптивность для музыкальных карточек */
+@media (max-width: 768px) {
+    .music-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .production-elements,
+    .flow-types,
+    .lyrics-themes,
+    .influences-list {
+        grid-template-columns: 1fr;
+    }
+}
