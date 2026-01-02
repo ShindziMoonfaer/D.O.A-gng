@@ -1,5 +1,4 @@
 
-
 console.log('✅ Script.js загружен!');
 
 // =================== ПРОСТАЯ КАПЧА ===================
@@ -84,6 +83,16 @@ window.addEventListener('load', () => {
                 });
             }
             console.log('🎵 Музыка включена!');
+            
+            // Инициализируем модальные окна после прохождения капчи
+            setTimeout(function() {
+                console.log('🔄 Переинициализация модальных окон после капчи...');
+                if (typeof initializeModals === 'function') {
+                    initializeModals();
+                } else {
+                    console.error('❌ Функция initializeModals не найдена!');
+                }
+            }, 300);
         } else {
             console.log(`❌ Неправильный ответ! Ожидалось ${correctAnswer}, получено ${userAnswer}`);
             
@@ -108,23 +117,6 @@ window.addEventListener('load', () => {
     inputField.focus();
     console.log('🔐 Капча готова!');
 });
-
-
-        themeToggle.style.background = '#4a6cf7';
-    
-   
-    themeToggle.addEventListener('click', () => {
-        // Простая анимация
-        themeToggle.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            themeToggle.style.transform = 'scale(1)';
-        }, 150);
-       
-        console.log('🎨 Кнопка темы нажата'); 
-    });
- {
-    console.log('ℹ️ Кнопка темы не найдена, но это нормально');
-}
 
 // =================== МУЗЫКАЛЬНАЯ ПАНЕЛЬ ===================
 const audioPlayer = document.getElementById('myAudio');
@@ -310,18 +302,22 @@ console.log(`
 })();
 
 // =================== МОДАЛЬНЫЕ ОКНА ===================
-// Ждем загрузки страницы
-document.addEventListener('DOMContentLoaded', function() {
+// Функция инициализации модальных окон
+function initializeModals() {
     console.log('👀 Инициализация модальных окон...');
 
     // Получаем все карточки фактов с кнопками
     const factCards = document.querySelectorAll('.fact-card[data-modal]');
+    const musicCards = document.querySelectorAll('.music-card[data-modal]');
     
-    if (factCards.length > 0) {
-        console.log(`✅ Найдено ${factCards.length} карточек фактов`);
+    // Объединяем все карточки
+    const allCards = [...factCards, ...musicCards];
+    
+    if (allCards.length > 0) {
+        console.log(`✅ Найдено ${allCards.length} интерактивных карточек`);
         
         // Добавляем обработчики кликов на кнопки "Подробнее"
-        factCards.forEach(card => {
+        allCards.forEach(card => {
             const btn = card.querySelector('.more-info-btn');
             if (btn) {
                 btn.addEventListener('click', function(e) {
@@ -333,12 +329,15 @@ document.addEventListener('DOMContentLoaded', function() {
                         modal.style.display = 'block';
                         document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
                         console.log(`💬 Открыто модальное окно: ${modalId}`);
+                    } else {
+                        console.error(`❌ Модальное окно ${modalId} не найдено!`);
                     }
                 });
+                console.log(`✅ Добавлен обработчик для ${card.getAttribute('data-modal')}`);
             }
         });
     } else {
-        console.warn('⚠️ Карточки фактов не найдены');
+        console.warn('⚠️ Интерактивные карточки не найдены');
     }
 
     // Получаем все модальные окна
@@ -384,30 +383,44 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         });
+        
+        // Закрытие по клавише Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                        
+                        // Останавливаем аудио
+                        const audios = modal.querySelectorAll('audio');
+                        audios.forEach(audio => {
+                            audio.pause();
+                            audio.currentTime = 0;
+                        });
+                        
+                        console.log('❌ Модальное окно закрыто (Escape)');
+                    }
+                });
+            }
+        });
     } else {
         console.warn('⚠️ Модальные окна не найдены');
     }
 
-    // Закрытие по клавише Escape
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            modals.forEach(modal => {
-                if (modal.style.display === 'block') {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                    
-                    // Останавливаем аудио
-                    const audios = modal.querySelectorAll('audio');
-                    audios.forEach(audio => {
-                        audio.pause();
-                        audio.currentTime = 0;
-                    });
-                    
-                    console.log('❌ Модальное окно закрыто (Escape)');
-                }
-            });
-        }
-    });
-
     console.log('✅ Модальные окна готовы!');
+}
+
+// Вызываем при загрузке DOM
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeModals);
+} else {
+    // DOM уже загружен
+    initializeModals();
+}
+
+// ВАЖНО: Также вызываем после прохождения капчи
+window.addEventListener('load', function() {
+    // Даем немного времени на отображение контента после капчи
+    setTimeout(initializeModals, 500);
 });
