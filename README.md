@@ -333,8 +333,8 @@
                     <h3>Пример трека: "In My Moods"</h3>
                     <p class="audio-description">Этот трек идеально демонстрирует его универсальность - начинается мелодично, но переходит в агрессивный дрилл.</p>
                     <audio controls>
-                        <source src="in-my-moods.mp3" type="audio/mpeg">
-                        Добавьте файл in-my-moods.mp3 в папку проекта
+                        <source src="InMyMoods.mp3" type="audio/mpeg">
+                        Добавьте файл InMyMoods.mp3
                     </audio>
                 </div>
             </div>
@@ -365,8 +365,8 @@
                 <div class="audio-section">
                     <h3>Послушать "Opp Huntin'"</h3>
                     <audio controls>
-                        <source src="opp-huntin.mp3" type="audio/mpeg">
-                        Добавьте файл opp-huntin.mp3 в папку проекта
+                        <source src="OppHuntin.mp3" type="audio/mpeg">
+                        Добавьте файл OppHuntin.mp3
                     </audio>
                 </div>
             </div>
@@ -399,8 +399,8 @@
                 <div class="audio-section">
                     <h3>Совместный трек с DThang</h3>
                     <audio controls>
-                        <source src="doa-collab.mp3" type="audio/mpeg">
-                        Добавьте файл doa-collab.mp3 в папку проекта
+                        <source src="TGCrippy.mp3" type="audio/mpeg">
+                        Добавьте файл TGCrippy.mp3
                     </audio>
                 </div>
             </div>
@@ -433,8 +433,8 @@
                 <div class="audio-section">
                     <h3>Трек с топовым битом</h3>
                     <audio controls>
-                        <source src="producer-track.mp3" type="audio/mpeg">
-                        Добавьте файл producer-track.mp3 в папку проекта
+                        <source src="test.mp3" type="audio/mpeg">
+                        Добавьте файл test.mp3
                     </audio>
                 </div>
             </div>
@@ -490,8 +490,8 @@
                     <h3>Трек новой волны</h3>
                     <p class="audio-description">Пример современного звучания Bronx Drill</p>
                     <audio controls>
-                        <source src="new-wave.mp3" type="audio/mpeg">
-                        Добавьте файл new-wave.mp3 в папку проекта
+                        <source src="NoHeart.mp3" type="audio/mpeg">
+                        Добавьте файл NoHeart.mp3
                     </audio>
                 </div>
             </div>
@@ -564,8 +564,8 @@
                     <h3>Пример типичного Drill бита</h3>
                     <p class="audio-description">Обратите внимание на мощные 808 басы и быстрые hi-hats</p>
                     <audio controls>
-                        <source src="drill-beat-example.mp3" type="audio/mpeg">
-                        Добавьте файл drill-beat-example.mp3 в папку проекта
+                        <source src="OppHuntin2.mp3" type="audio/mpeg">
+                        Добавьте файл OppHuntin2.mp3
                     </audio>
                 </div>
             </div>
@@ -623,8 +623,8 @@
                     <h3>Пример разных флоу</h3>
                     <p class="audio-description">Слушайте, как Kenzo переключается между агрессией и мелодикой</p>
                     <audio controls>
-                        <source src="flow-example.mp3" type="audio/mpeg">
-                        Добавьте файл flow-example.mp3 в папку проекта
+                        <source src="What'sTheMove.mp3" type="audio/mpeg">
+                        Добавьте файл What'sTheMove.mp3
                     </audio>
                 </div>
             </div>
@@ -694,8 +694,8 @@
                     <h3>Пример глубокого текста</h3>
                     <p class="audio-description">Трек, где Kenzo делится личными переживаниями</p>
                     <audio controls>
-                        <source src="deep-lyrics.mp3" type="audio/mpeg">
-                        Добавьте файл deep-lyrics.mp3 в папку проекта
+                        <source src="SupaSitchy.mp3" type="audio/mpeg">
+                        Добавьте файл SupaSitchy.mp3
                     </audio>
                 </div>
             </div>
@@ -764,8 +764,8 @@
                     <h3>Эволюция звучания</h3>
                     <p class="audio-description">Сравнение ранних и поздних треков - слышно развитие стиля</p>
                     <audio controls>
-                        <source src="evolution.mp3" type="audio/mpeg">
-                        Добавьте файл evolution.mp3 в папку проекта
+                        <source src="FeelTheRage.mp3" type="audio/mpeg">
+                        Добавьте файл FeelTheRage.mp3
                     </audio>
                 </div>
             </div>
